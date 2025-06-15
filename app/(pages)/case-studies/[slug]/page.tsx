@@ -6,13 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
-type CaseStudyDetailPageProps = {
-  params: {
-    slug: string;
-  };
-};
-
-const CaseStudyDetailPage = ({ params }: CaseStudyDetailPageProps) => {
+const CaseStudyDetailPage = ({ params }: { params: { slug: string } }) => {
   const { slug } = params;
   // In a real application, you would fetch the case study data based on the slug
   const caseStudy = {

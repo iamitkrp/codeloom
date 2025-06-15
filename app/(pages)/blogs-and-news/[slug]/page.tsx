@@ -6,13 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, Calendar, User } from "lucide-react";
 
-type BlogPostPageProps = {
-  params: {
-    slug: string;
-  };
-};
-
-const BlogPostPage = ({ params }: BlogPostPageProps) => {
+const BlogPostPage = ({ params }: { params: { slug: string } }) => {
   // In a real application, you would fetch blog post data based on the slug
   const { slug } = params;
 
@@ -38,26 +32,44 @@ const BlogPostPage = ({ params }: BlogPostPageProps) => {
     <div className="py-24 sm:py-32 bg-background text-foreground">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-          >
-            <Link href="/blogs-and-news" className="inline-flex items-center gap-2 text-neutral-500 hover:text-foreground transition-colors mb-8">
-              <ArrowLeft size={18} />
-              Back to Blog
-            </Link>
-            <h1 className="text-4xl md:text-5xl font-bold font-heading">{post.title}</h1>
-            <div className="flex items-center gap-6 mt-4 text-neutral-500 dark:text-neutral-400">
-              <div className="flex items-center gap-2">
-                <Calendar size={16} />
-                <span>{post.date}</span>
+          <div className="relative z-10">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="bg-white/10 backdrop-blur-md rounded-2xl p-8 max-w-4xl mx-auto"
+            >
+              <Link
+                href="/blogs-and-news"
+                className="inline-flex items-center text-sky-400 hover:text-sky-300 transition-colors mb-4"
+              >
+                <ArrowLeft className="mr-2" size={16} />
+                Back to Blog
+              </Link>
+              <h1 className="text-4xl md:text-5xl font-bold font-heading capitalize">
+                {slug.replace(/-/g, " ")}
+              </h1>
+              <div className="flex items-center space-x-4 mt-4 text-neutral-300">
+                <div className="flex items-center">
+                  <Calendar className="mr-2" size={16} />
+                  <span>{post.date}</span>
+                </div>
+                <div className="flex items-center">
+                  <User className="mr-2" size={16} />
+                  <span>By {post.author}</span>
+                </div>
               </div>
-              <div className="flex items-center gap-2">
-                <User size={16} />
-                <span>{post.author}</span>
+              <div className="prose prose-invert lg:prose-xl mt-6 text-neutral-300">
+                <p>{post.content}</p>
+                <p>
+                  This is where the main body of the blog post would go. It can
+                  contain paragraphs, headings, lists, images, and code blocks.
+                  The content would be fetched from a CMS or a local markdown file
+                  based on the slug.
+                </p>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
 
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
@@ -73,11 +85,6 @@ const BlogPostPage = ({ params }: BlogPostPageProps) => {
               className="w-full h-auto object-cover rounded-lg shadow-lg"
             />
           </motion.div>
-
-          <div
-            className="prose prose-lg dark:prose-invert max-w-none"
-            dangerouslySetInnerHTML={{ __html: post.content }}
-          />
         </div>
       </div>
     </div>
