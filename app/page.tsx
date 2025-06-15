@@ -43,7 +43,7 @@ const Home = () => {
         playsInline
         className="absolute top-0 left-0 w-full h-full object-cover -z-10"
       />
-      <div className="absolute inset-0 bg-black/50 -z-10"></div>
+      <div className="absolute inset-0 bg-black/50 backdrop-blur-[2px] -z-10"></div>
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.h1

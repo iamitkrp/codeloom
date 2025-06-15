@@ -1,21 +1,34 @@
 import type { Metadata } from "next";
-import { DM_Sans } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
+import { ThemeProvider } from "@/lib/ThemeProvider";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SmoothScrolling from "@/components/SmoothScrolling";
 import Script from "next/script";
 
-const dmSans = DM_Sans({
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
-  variable: "--font-dm-sans",
+// Neue Montreal font
+const neueMontreal = localFont({
+  src: [
+    {
+      path: "./fonts/NeueMontreal-Light.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./fonts/NeueMontreal-Bold.otf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  display: "swap",
+  variable: "--font-neuemontreal",
 });
 
 export const metadata: Metadata = {
-  title: "CODELOOM - Weaving Design, Code, and Intelligence",
+  title: "Codeloom",
   description:
-    "Codeloom weaves design, code, and intelligence into tailor-made digital experiences. We specialize in AI Agent Development, Website & Web App Creation, and Custom Software Solutions.",
+    "Codeloom is a software development agency that specializes in building AI-powered solutions, custom software, and modern websites.",
 };
 
 export default function RootLayout({
@@ -24,15 +37,34 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${dmSans.variable} font-sans antialiased`}>
-        <SmoothScrolling />
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+    <html
+      lang="en"
+      className={`${neueMontreal.variable}`}
+      suppressHydrationWarning
+    >
+      <body>
+        {/* Global background video */}
+        <video
+          className="pointer-events-none fixed inset-0 w-full h-full object-cover -z-10"
+          src="/media/CODE_LOOM%20_LIQ.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+        />
+
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+          <SmoothScrolling>
+            <Navbar />
+            {children}
+            <Footer />
+          </SmoothScrolling>
+        </ThemeProvider>
         <Script
-          type="module"
+          id="spline-viewer"
           src="https://unpkg.com/@splinetool/viewer@1.10.7/build/spline-viewer.js"
+          strategy="beforeInteractive"
+          type="module"
         />
       </body>
     </html>

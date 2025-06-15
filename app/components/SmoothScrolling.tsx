@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import Lenis from "lenis";
 
-const SmoothScrolling = () => {
+const SmoothScrolling = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
     const lenis = new Lenis();
 
@@ -15,7 +15,7 @@ const SmoothScrolling = () => {
     requestAnimationFrame(raf);
   }, []);
 
-  return null;
+  return <>{children}</>;
 };
 
 export default SmoothScrolling; 

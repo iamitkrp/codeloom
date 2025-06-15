@@ -7,8 +7,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-dm-sans)'],
-        heading: ['Clash Display', 'var(--font-dm-sans)'],
+        sans: ["var(--font-neuemontreal)", "sans-serif"],
+        heading: ["var(--font-neuemontreal)", "sans-serif"],
       }
     },
   },

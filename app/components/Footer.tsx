@@ -27,7 +27,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative min-h-screen flex items-center justify-center text-neutral-300 overflow-hidden">
+    <footer className="relative z-10 min-h-screen flex items-center justify-center text-neutral-300 overflow-hidden">
       {/* Background Video */}
       <div className="absolute inset-0 w-full h-full -z-20">
         <video
