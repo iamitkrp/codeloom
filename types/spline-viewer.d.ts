@@ -5,4 +5,9 @@ declare namespace JSX {
       ref?: React.Ref<HTMLElement>;
     };
   }
-} 
+}
+
+type PageProps<T = {}> = {
+  params: T;
+  searchParams?: { [key: string]: string | string[] | undefined };
+}; 

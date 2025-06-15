@@ -5,8 +5,9 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import { PageProps } from "next/navigation";
 
-const CaseStudyDetailPage = ({ params }: { params: { slug: string } }) => {
+const CaseStudyDetailPage = ({ params }: PageProps<{ slug: string }>) => {
   // In a real application, you would fetch the case study data based on the slug
   const caseStudy = {
     title: "Placeholder Case Study",

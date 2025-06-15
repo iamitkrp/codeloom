@@ -5,8 +5,9 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, Calendar, User } from "lucide-react";
+import { PageProps } from "next/navigation";
 
-const BlogPostPage = ({ params }: { params: { slug: string } }) => {
+const BlogPostPage = ({ params }: PageProps<{ slug: string }>) => {
   // In a real application, you would fetch blog post data based on the slug
   const post = {
     title: "Placeholder Blog Post",
