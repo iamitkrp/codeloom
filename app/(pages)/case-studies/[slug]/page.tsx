@@ -5,12 +5,18 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
-import { PageProps } from "next/navigation";
 
-const CaseStudyDetailPage = ({ params }: PageProps<{ slug: string }>) => {
+type CaseStudyDetailPageProps = {
+  params: {
+    slug: string;
+  };
+};
+
+const CaseStudyDetailPage = ({ params }: CaseStudyDetailPageProps) => {
+  const { slug } = params;
   // In a real application, you would fetch the case study data based on the slug
   const caseStudy = {
-    title: "Placeholder Case Study",
+    title: "Revolutionizing a FinTech Startup",
     category: "AI & Web Development",
     description: "This is a placeholder for a detailed case study. The content here would describe the project's challenges, our approach, and the results we delivered.",
     image: "/images/placeholder.svg",
@@ -32,7 +38,7 @@ const CaseStudyDetailPage = ({ params }: PageProps<{ slug: string }>) => {
               Back to Case Studies
             </Link>
             <p className="text-base font-medium text-neutral-500 dark:text-neutral-400">{caseStudy.category}</p>
-            <h1 className="text-4xl md:text-5xl font-bold font-heading mt-2">{`Project: ${params.slug.replace(/-/g, ' ')}`}</h1>
+            <h1 className="text-4xl md:text-5xl font-bold font-heading mt-2">{`Project: ${slug.replace(/-/g, ' ')}`}</h1>
             <p className="mt-4 text-lg text-neutral-600 dark:text-neutral-400">{caseStudy.description}</p>
           </motion.div>
 
