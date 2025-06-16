@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { BrainCircuit, Workflow, Server, HeartPulse } from "lucide-react";
 import ServiceCard from "@/components/ServiceCard";
 import FaqItem from "./FaqItem"; // We will create this component
+import Spline from "@splinetool/react-spline";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -211,15 +212,10 @@ const ServicesPage = () => {
 
   return (
     <div ref={containerRef} className="text-foreground overflow-x-hidden relative">
-      {/* Background Video with Blurry Overlay - Services Page Only */}
-      <video
-        className="pointer-events-none fixed inset-0 w-full h-full object-cover -z-20"
-        src="/media/CODE_LOOM%20_LIQ.mp4"
-        autoPlay
-        muted
-        loop
-        playsInline
-      />
+      {/* Background Spline Animation */}
+      <div className="pointer-events-none fixed inset-0 w-full h-full -z-20">
+        <Spline scene="/media/case_study.spline" />
+      </div>
       
       {/* Blurry overlay for services page background */}
       <div className="pointer-events-none fixed inset-0 w-full h-full bg-black/30 backdrop-blur-[3px] -z-10"></div>
@@ -227,7 +223,7 @@ const ServicesPage = () => {
       {/* Hero Section – redesigned */}
       <section className="relative min-h-screen flex flex-col items-center justify-center text-center overflow-hidden px-4">
         <div className="relative z-10 max-w-5xl mx-auto">
-          <h1 className="font-heading font-extrabold leading-[1.15] text-white text-[clamp(2.5rem,10vw,7rem)] tracking-tight">
+          <h1 className="font-heading font-light leading-[1.15] text-white text-[clamp(2.5rem,10vw,7rem)] tracking-tight">
             <span className="block overflow-hidden pb-1">
               <span className="inline-block hero-line">Building</span>
             </span>
@@ -266,7 +262,7 @@ const ServicesPage = () => {
         
         <div className="container mx-auto px-4 how-we-work-container relative z-10">
           <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-6xl font-bold mb-6 how-we-work-title bg-gradient-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-6xl font-light mb-6 how-we-work-title bg-gradient-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent">
               Our Process
             </h2>
             <p className="text-xl text-neutral-400 max-w-2xl mx-auto">
@@ -286,10 +282,10 @@ const ServicesPage = () => {
               {/* Step 1 - Discovery */}
               <div className="step relative flex flex-col lg:flex-row items-center gap-8 lg:gap-16 group">
                 <div className="lg:w-1/2 lg:pr-16 text-center lg:text-right order-2 lg:order-1">
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-purple-500 to-purple-600 text-white text-2xl font-bold mb-6 step-number">
+                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-purple-500 to-purple-600 text-white text-2xl font-light mb-6 step-number">
                     01
                   </div>
-                  <h3 className="text-3xl font-bold mb-4 text-white step-title">Discovery & Strategy</h3>
+                  <h3 className="text-3xl font-light mb-4 text-white step-title">Discovery & Strategy</h3>
                   <p className="text-lg text-neutral-300 leading-relaxed step-description">
                     We dive deep into your vision, goals, and challenges. Through collaborative workshops and strategic analysis, we map out the perfect roadmap for your digital transformation.
                   </p>
@@ -328,10 +324,10 @@ const ServicesPage = () => {
                 </div>
                 
                 <div className="lg:w-1/2 lg:pl-16 text-center lg:text-left order-3">
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 text-white text-2xl font-bold mb-6 step-number">
+                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 text-white text-2xl font-light mb-6 step-number">
                     02
                   </div>
-                  <h3 className="text-3xl font-bold mb-4 text-white step-title">Design & Prototyping</h3>
+                  <h3 className="text-3xl font-light mb-4 text-white step-title">Design & Prototyping</h3>
                   <p className="text-lg text-neutral-300 leading-relaxed step-description">
                     Our creative team transforms strategy into stunning, intuitive designs. We build interactive prototypes that bring your vision to life and ensure perfect user experiences.
                   </p>
@@ -346,10 +342,10 @@ const ServicesPage = () => {
               {/* Step 3 - Development */}
               <div className="step relative flex flex-col lg:flex-row items-center gap-8 lg:gap-16 group">
                 <div className="lg:w-1/2 lg:pr-16 text-center lg:text-right order-2 lg:order-1">
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-green-500 to-green-600 text-white text-2xl font-bold mb-6 step-number">
+                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-green-500 to-green-600 text-white text-2xl font-light mb-6 step-number">
                     03
                   </div>
-                  <h3 className="text-3xl font-bold mb-4 text-white step-title">Development & Integration</h3>
+                  <h3 className="text-3xl font-light mb-4 text-white step-title">Development & Integration</h3>
                   <p className="text-lg text-neutral-300 leading-relaxed step-description">
                     Our skilled developers bring designs to life with clean, scalable code. We build robust solutions and seamlessly integrate them with your existing systems and workflows.
                   </p>
@@ -388,10 +384,10 @@ const ServicesPage = () => {
                 </div>
                 
                 <div className="lg:w-1/2 lg:pl-16 text-center lg:text-left order-3">
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 text-white text-2xl font-bold mb-6 step-number">
+                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 text-white text-2xl font-light mb-6 step-number">
                     04
                   </div>
-                  <h3 className="text-3xl font-bold mb-4 text-white step-title">Launch & Optimization</h3>
+                  <h3 className="text-3xl font-light mb-4 text-white step-title">Launch & Optimization</h3>
                   <p className="text-lg text-neutral-300 leading-relaxed step-description">
                     After rigorous testing, we launch your project with confidence. Our commitment continues with ongoing monitoring, optimization, and support to ensure sustained success.
                   </p>
@@ -410,7 +406,7 @@ const ServicesPage = () => {
       {/* FAQ Section */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 faq-title">
+          <h2 className="text-3xl md:text-4xl font-light text-center mb-12 faq-title">
             Frequently Asked Questions
           </h2>
           <div className="max-w-3xl mx-auto faq-container">

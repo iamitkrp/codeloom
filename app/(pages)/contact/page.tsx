@@ -36,7 +36,7 @@ const ContactPage = () => {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-16"
         >
-          <h1 className="text-4xl md:text-5xl font-bold font-heading">Get in Touch</h1>
+          <h1 className="text-4xl md:text-5xl font-light font-heading">Get in Touch</h1>
           <p className="mt-4 text-lg text-neutral-500 dark:text-neutral-400 max-w-2xl mx-auto">
             Have a project in mind or just want to say hello? We'd love to hear from you.
           </p>
@@ -49,7 +49,7 @@ const ContactPage = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl font-bold font-heading mb-6">Contact Information</h2>
+            <h2 className="text-3xl font-light font-heading mb-6">Contact Information</h2>
             <div className="space-y-6">
               <div className="flex items-center gap-4">
                 <Mail className="w-6 h-6 text-foreground" />

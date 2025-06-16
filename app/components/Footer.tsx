@@ -49,7 +49,7 @@ const Footer = () => {
         transition={{ duration: 0.8, ease: "easeInOut" }}
         className="relative z-10 w-[90%] max-w-4xl bg-black/30 backdrop-blur-2xl p-8 md:p-12 rounded-2xl border border-white/10 text-center"
       >
-        <h2 className="text-4xl md:text-6xl font-bold font-heading text-white mb-4">
+        <h2 className="text-4xl md:text-6xl font-light font-heading text-white mb-4">
           Let's Build Something Amazing
         </h2>
         <p className="text-neutral-300 max-w-xl mx-auto mb-10 text-lg">

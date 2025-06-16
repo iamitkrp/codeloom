@@ -29,7 +29,7 @@ const MagneticButton = ({ children }: { children: React.ReactNode }) => {
       onMouseLeave={handleMouseLeave}
       animate={{ x, y }}
       transition={{ type: 'spring', stiffness: 250, damping: 15, mass: 0.5 }}
-      className="group relative inline-flex items-center gap-2 px-10 py-5 bg-white text-neutral-900 rounded-full font-bold text-lg transition-colors"
+              className="group relative inline-flex items-center gap-2 px-10 py-5 bg-white text-neutral-900 rounded-full font-light text-lg transition-colors"
     >
       {children}
     </motion.button>

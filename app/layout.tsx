@@ -12,12 +12,12 @@ const neueMontreal = localFont({
   src: [
     {
       path: "./fonts/NeueMontreal-Light.otf",
-      weight: "400",
+      weight: "300",
       style: "normal",
     },
     {
-      path: "./fonts/NeueMontreal-Bold.otf",
-      weight: "700",
+      path: "./fonts/NeueMontreal-Light.otf",
+      weight: "400",
       style: "normal",
     },
   ],

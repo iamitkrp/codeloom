@@ -48,7 +48,7 @@ const BlogsAndNewsPage = () => {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-16"
         >
-          <h1 className="text-4xl md:text-5xl font-bold font-heading">Insights & Updates</h1>
+          <h1 className="text-4xl md:text-5xl font-light font-heading">Insights & Updates</h1>
           <p className="mt-4 text-lg text-neutral-500 dark:text-neutral-400 max-w-2xl mx-auto">
             Stay informed with our latest articles, company news, and thoughts on the future of technology.
           </p>
