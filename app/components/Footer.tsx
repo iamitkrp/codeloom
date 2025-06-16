@@ -15,7 +15,6 @@ const Footer = () => {
   const pageLinks = [
     { label: "Home", href: "/" },
     { label: "Services", href: "/services" },
-    { label: "Case Studies", href: "/case-studies" },
     { label: "Blog", href: "/blogs-and-news" },
   ];
   
