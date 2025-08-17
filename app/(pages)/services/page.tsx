@@ -6,7 +6,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { BrainCircuit, Workflow, Server, HeartPulse } from "lucide-react";
 import ServiceCard from "@/components/ServiceCard";
 import FaqItem from "./FaqItem"; // We will create this component
-import Spline from "@splinetool/react-spline";
+import dynamic from "next/dynamic";
+const Spline = dynamic(() => import("@splinetool/react-spline").then(m => m.default), { ssr: false });
 
 gsap.registerPlugin(ScrollTrigger);
 

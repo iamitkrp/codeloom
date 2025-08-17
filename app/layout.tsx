@@ -16,8 +16,8 @@ const neueMontreal = localFont({
       style: "normal",
     },
     {
-      path: "./fonts/NeueMontreal-Light.otf",
-      weight: "400",
+      path: "./fonts/NeueMontreal-Bold.otf",
+      weight: "700",
       style: "normal",
     },
   ],
@@ -60,12 +60,7 @@ export default function RootLayout({
             <Footer />
           </SmoothScrolling>
         </ThemeProvider>
-        <Script
-          id="spline-viewer"
-          src="https://unpkg.com/@splinetool/viewer@1.10.7/build/spline-viewer.js"
-          strategy="beforeInteractive"
-          type="module"
-        />
+        <Script id="spline-viewer" src="https://unpkg.com/@splinetool/viewer@1.10.7/build/spline-viewer.js" strategy="lazyOnload" type="module" />
       </body>
     </html>
   );

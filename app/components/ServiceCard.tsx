@@ -1,5 +1,4 @@
 import React from 'react';
-import './ServiceCard.css';
 
 type ServiceCardProps = {
   icon: React.ReactNode;

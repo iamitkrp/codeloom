@@ -1,7 +1,9 @@
 "use client";
 
 import React, { Suspense } from "react";
-import Spline from '@splinetool/react-spline';
+import dynamic from 'next/dynamic';
+
+const Spline = dynamic(() => import('@splinetool/react-spline').then(m => m.default), { ssr: false });
 
 const Home = () => {
   return (

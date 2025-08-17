@@ -31,6 +31,15 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 ## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This project is configured for Vercel:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Node runtime: engines set to Node 18+ in `package.json`
+- Next.js 15 app router in `app/`
+- Tailwind CSS v4 via `@tailwindcss/postcss`
+- Image optimization disabled (`next.config.ts` `images.unoptimized: true`) for simpler static export
+- Spline and GSAP loaded client-side only to avoid SSR issues
+
+Build Command: `npm run build`
+Output Directory: `.next`
+
+Simply connect the repo to Vercel and deploy.
