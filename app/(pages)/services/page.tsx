@@ -6,8 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { BrainCircuit, Workflow, Server, HeartPulse } from "lucide-react";
 import ServiceCard from "@/components/ServiceCard";
 import FaqItem from "./FaqItem"; // We will create this component
-import dynamic from "next/dynamic";
-const Spline = dynamic(() => import("@splinetool/react-spline").then(m => m.default), { ssr: false });
+import React from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -215,7 +214,7 @@ const ServicesPage = () => {
     <div ref={containerRef} className="text-foreground overflow-x-hidden relative">
       {/* Background Spline Animation */}
       <div className="pointer-events-none fixed inset-0 w-full h-full -z-20">
-        <Spline scene="/media/case_study.spline" />
+        <spline-viewer url="/media/case_study.spline" style={{ width: "100%", height: "100%", display: "block" }} />
       </div>
       
       {/* Blurry overlay for services page background */}

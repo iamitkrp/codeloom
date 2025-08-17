@@ -37,7 +37,7 @@ This project is configured for Vercel:
 - Next.js 15 app router in `app/`
 - Tailwind CSS v4 via `@tailwindcss/postcss`
 - Image optimization disabled (`next.config.ts` `images.unoptimized: true`) for simpler static export
-- Spline and GSAP loaded client-side only to avoid SSR issues
+- Spline via web component (`<spline-viewer>`) to avoid package export issues on Vercel
 
 Build Command: `npm run build`
 Output Directory: `.next`

@@ -1,23 +1,11 @@
 "use client";
 
-import React, { Suspense } from "react";
-import dynamic from 'next/dynamic';
-
-const Spline = dynamic(() => import('@splinetool/react-spline').then(m => m.default), { ssr: false });
+import React from "react";
 
 const Home = () => {
   return (
     <div className="w-full h-screen overflow-hidden">
-      <Suspense fallback={
-        <div className="w-full h-full flex items-center justify-center bg-black">
-          <div className="text-white text-xl">Loading 3D Scene...</div>
-        </div>
-      }>
-        <Spline 
-          scene="/media/MAIN_3D.spline"
-          className="w-full h-full"
-        />
-      </Suspense>
+      <spline-viewer url="/media/MAIN_3D.spline" style={{ width: "100%", height: "100%", display: "block" }} />
     </div>
   );
 };
